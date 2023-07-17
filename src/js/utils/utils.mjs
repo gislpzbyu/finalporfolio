@@ -8,19 +8,16 @@ export function createCard(gif) {
 		    <img src="${imageUrl}" class="card-img-top" alt="GIF">
 		    <div class="card-body">
 		      <h5 class="card-title">${title}</h5>
+              <button class="btn btn-primary copy-url-button">Copy URL</button>
 		    </div>
 		  </div>
 		</div>`
 	);
 }
 
-export function getHeyArnoldGifs () {
-	const apiUrl = 'https://api.giphy.com/v1/gifs'
-	const apiKey = 'yk0XxQhSBspdswqMKBRCkvfPotXQxxT6';
+export function createHistoryItem(historyText, index) {
 
-	const url = `${apiUrl}/search?api_key=${apiKey}&q=Hey%20Arnold&limit=20`;
+	const closeButton = `<button class="close-btn" data-index="${index}">&#10006;</button>`;
 
-	fetch(url)
-		.then(response => response.json())
-		.then(data => console.log(data));
+	return `<li class="list-group-item">${historyText}${closeButton}</li>`;
 }

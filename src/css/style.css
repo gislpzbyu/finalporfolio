@@ -1,8 +1,12 @@
-/*.sidebar {*/
-/*  background-color: #f8f9fa;*/
-/*  padding: 20px;*/
-/*}*/
+.cursor-pointer {
+    cursor: pointer;
+}
 
-/*.container {*/
-/*  margin-top: 20px;*/
-/*}*/
+li.list-group-item {
+    display: flex;
+    align-items: center;
+}
+
+li.list-group-item .close-btn {
+    margin-left: auto;
+}
