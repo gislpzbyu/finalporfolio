@@ -10,3 +10,7 @@ li.list-group-item {
 li.list-group-item .close-btn {
     margin-left: auto;
 }
+
+#logo {
+    height: 30px;
+}
