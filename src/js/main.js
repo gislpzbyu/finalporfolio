@@ -65,19 +65,14 @@ function loadHistoryList() {
 }
 
 function saveSearchIntoLocalStorage(searchCriteria = '') {
-	// Retrieve the existing array from localStorage
 	const historyJSON = localStorage.getItem('gif-history');
 
-	// Parse the JSON string back into an array
 	const history = JSON.parse(historyJSON);
 
-	// Add new colors to the array
 	history.push(searchCriteria);
 
-	// Convert the updated array to a JSON string
 	const updatedHistoryJSON = JSON.stringify(history.reverse());
 
-	// Store the updated JSON string back in localStorage
 	localStorage.setItem('gif-history', updatedHistoryJSON);
 
 	loadHistoryList();
@@ -93,13 +88,10 @@ function removeHistoryItem(index) {
 	const existingLocalStorage = localStorage.getItem('gif-history');
 	let history = JSON.parse(existingLocalStorage);
 
-	// Remove the item at the specified index
 	history.splice(index, 1);
 
-	// Update the localStorage array
 	localStorage.setItem('gif-history', JSON.stringify(history));
 
-	// Reload the history list
 	loadHistoryList();
 }
 
@@ -111,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const form = document.querySelector('#myForm');
 	form.addEventListener('submit', searchGifs);
 
-	// Obtén el elemento 'history-list'
 	const historyList = document.getElementById('history-list');
 
 	historyList.addEventListener('click', function(event) {
@@ -127,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 
-	// Copy URL GIF
 	const cardRowList = document.getElementById('card-row');
 
 	cardRowList.addEventListener('click', function(event) {
